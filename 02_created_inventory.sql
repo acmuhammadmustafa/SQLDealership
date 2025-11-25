@@ -1,6 +1,9 @@
 use SQLdealership;
 
 CREATE TABLE inventory(
-dealershipid int auto_increment primary key,
-vin int
+dealershipsid INT,
+    VIN VARCHAR(50),
+    PRIMARY KEY (DealershipsID, VIN),
+    FOREIGN KEY (DealershipsID) REFERENCES dealerships(DealershipsID),
+    FOREIGN KEY (VIN) REFERENCES vehicles(VIN)
 );
